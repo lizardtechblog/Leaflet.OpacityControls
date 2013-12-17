@@ -3,6 +3,8 @@ Leaflet.OpacityControls
 
 Simple Leaflet controls to adjust the opacity of a map.
 
+Check out the demo here: http://lizardtechblog.github.io/Leaflet.OpacityControls/
+
 There are three controls that you can add to a map: a control to increase opacity, a control to decrease opacity, and an interactive slider control. The slider control uses the jquery-ui library.
 
 To add the controls to the map, add the following to the HEAD of your HTML document:
