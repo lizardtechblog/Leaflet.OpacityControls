@@ -3,7 +3,9 @@ Leaflet.OpacityControls
 
 Simple Leaflet controls to adjust the opacity of a map.
 
-There are three controls that you can add to a map: a control to increase opacity, a control to decrease opacity, and an interactive slider control. The slider control uses the jquery-ui library.
+Check out the demo here: http://lizardtechblog.github.io/Leaflet.OpacityControls/
+
+There are three controls that you can add to a map: a control to increase opacity, a control to decrease opacity, and an interactive slider control. The main files for the controls are ````lib/opacity/Control.Opacity.js```` and ````lib/opacity/Control.Opacity.css````. Only the slider control uses the jquery-ui library.
 
 To add the controls to the map, add the following to the HEAD of your HTML document:
 
@@ -28,3 +30,12 @@ Then to initialize the controls, add the following lines to the BODY of your HTM
     var opacitySlider = new L.Control.opacitySlider();
     map.addControl(opacitySlider);
     
+To specify the layer for which you want to modify the opacity, use the ````setOpacityLayer()```` method. For example, to set a layer called ````historic_seattle```` as the opacity layer, add the following line to the BODY of your HTML document:
+
+    higherOpacity.setOpacityLayer(historic_seattle);
+    
+You only need to call the setOpacityLayer() method for one control. The method sets the opacity layer for the other controls automatically. This makes it possible for you to use controls individually. For example, if you only want to create the opacity slider control, you can add the following lines to the BODY of your HTML document:
+    
+    var opacitySlider = new L.Control.opacitySlider();
+    map.addControl(opacitySlider);
+    opacitySlider.setOpacityLayer(historic_seattle);
