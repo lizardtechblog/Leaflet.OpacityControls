@@ -30,3 +30,12 @@ Then to initialize the controls, add the following lines to the BODY of your HTM
     var opacitySlider = new L.Control.opacitySlider();
     map.addControl(opacitySlider);
     
+To specify the layer for which you want to modify the opacity, use the ````setOpacityLayer()```` method. For example, to set a layer called ````historic_seattle```` as the opacity layer, add the following line to the BODY of your HTML document:
+
+    higherOpacity.setOpacityLayer(historic_seattle);
+    
+You only need to call the setOpacityLayer() method for one control. The method sets the opacity layer for the other controls automatically. This makes it possible for you to use controls individually. For example, if you only want to create the opacity slider control, you can add the following lines to the BODY of your HTML document:
+    
+    var opacitySlider = new L.Control.opacitySlider();
+    map.addControl(opacitySlider);
+    opacitySlider.setOpacityLayer(historic_seattle);
