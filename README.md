@@ -9,6 +9,7 @@ There are three controls that you can add to a map: a control to increase opacit
 
 To initialize the controls, add the following lines to the BODY of your HTML document:
 
+    L.Control.setOpacityControlMap(map);
     var higherOpacity = new L.Control.higherOpacity();
     map.addControl(higherOpacity);
     var lowerOpacity = new L.Control.lowerOpacity();
@@ -26,6 +27,13 @@ You only need to call the setOpacityLayer() method for one control. The method s
     map.addControl(opacitySlider);
     opacitySlider.setOpacityLayer(historic_seattle);
     
+If you have several layers on the same map or more than one map on the same page and you would like to control their opacity with the same controls, you can use the ````addOpacityLayer()```` method instead of the ````setOpacityLayer()```` method. For example, to control two layers on the same map, you can add the following lines to the BODY of your HTML document:
+
+    var opacitySlider = new L.Control.opacitySlider();
+    map.addControl(opacitySlider);
+    opacitySlider.addOpacityLayer(historic_seattle);
+    opacitySlider.addOpacityLayer(historic_washington_state);
+
 The controls make use of the Leaflet and jquery-ui libraries. Include the following lines of code in the HEAD of your HTML document:
 
     <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
