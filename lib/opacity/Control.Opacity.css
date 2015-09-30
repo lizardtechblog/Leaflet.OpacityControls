@@ -44,4 +44,8 @@
     background-image: none;
     background-color: #646464;
     height: 200px;
-}  
+} 
+
+.ui-slider-horizontal {
+    width: 100px;
+};
